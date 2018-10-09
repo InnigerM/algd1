@@ -1,0 +1,9 @@
+#IDEA files
+.idea/
+
+#OUTPUT files
+build/
+out/
+.settings/
+.gradle/
+gradle/
