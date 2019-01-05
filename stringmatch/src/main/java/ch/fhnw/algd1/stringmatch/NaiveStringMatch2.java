@@ -6,6 +6,7 @@ public class NaiveStringMatch2 implements IStringMatch {
 	@Override
 	public int firstMatch(String text, String pattern) {
 		// TODO search for first start position i where pattern matches text
-		return 0;
+		NaiveStringMatch1 StringSearch = new NaiveStringMatch1();
+		return StringSearch.firstMatch(text, pattern);
 	}
 }
