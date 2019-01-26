@@ -20,7 +20,7 @@ public class Mergesort {
         T[] b = (T[]) new Comparable[end - beg];
         int i = 0, j = beg, k = m;
         while (j < m && k < end) {
-            if (a[j].compareTo(a[k]) <= 0) b[i++] = a[j++];
+            if (-(a[j].compareTo(a[k])) <= 0) b[i++] = a[j++];
             else b[i++] = a[k++];
         }
         while (j < m) b[i++] = a[j++];

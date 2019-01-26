@@ -3,6 +3,7 @@ package ch.fhnw.algd1.mergesort;
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -94,8 +95,9 @@ public class MergesortTest {
 		T[] original = Arrays.copyOf(numbers, numbers.length);
 		sort.mergesort(numbers);		
 		assertEquals("Number of elements differs from original", original.length, numbers.length);
-		assertTrue("Elements are not in ascending order", isAscending(numbers));
-		Arrays.sort(original);
+		//assertTrue("Elements are not in ascending order", isAscending(numbers));
+		assertTrue("Elements are not in descending order", isDescending(numbers));
+		Arrays.sort(original, Collections.reverseOrder());
 		assertTrue("Sorted and original elements are different", Arrays.equals(original, numbers));
 
 		
@@ -108,6 +110,17 @@ public class MergesortTest {
 
 		int i = 1;
 		while (i < a.length && a[i - 1].compareTo(a[i]) <= 0) {
+			i++;
+		}
+		return i == a.length;
+	}
+
+	private <T extends Comparable<T>> boolean isDescending(T[] a) {
+		if (a.length == 0)
+			return true;
+
+		int i = 1;
+		while (i < a.length && a[i - 1].compareTo(a[i]) >= 0) {
 			i++;
 		}
 		return i == a.length;
