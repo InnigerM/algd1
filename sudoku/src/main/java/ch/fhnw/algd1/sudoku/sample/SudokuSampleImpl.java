@@ -17,7 +17,7 @@ public final class SudokuSampleImpl implements SudokuSample {
 			{ 0, 1, 6, 8, 9, 0, 2, 0, 3 }, { 0, 4, 0, 3, 0, 0, 0, 8, 1 } };
 
 	/**
-	 * @param args
+	 * @param s
 	 */
 	@Override
 	public void set(SudokuModel s) {
